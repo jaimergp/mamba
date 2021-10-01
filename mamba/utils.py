@@ -169,7 +169,7 @@ def load_channels(
             )
             print("Cache path: ", subdir.cache_path())
 
-        with FileLock(subdir.cache_path()):
+        with FileLock(api.create_cache_dir()):
             repo = subdir.create_repo(pool)
 
         repo.set_priority(priority, subpriority)
